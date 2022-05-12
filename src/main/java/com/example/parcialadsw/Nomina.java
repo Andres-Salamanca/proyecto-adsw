@@ -1,2 +1,5 @@
-package com.example.parcialadsw;public class Nomina {
+package com.example.parcialadsw;
+
+public class Nomina {
+
 }
