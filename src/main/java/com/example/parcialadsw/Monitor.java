@@ -6,10 +6,10 @@ public class Monitor extends Empleado{
     protected int horas_trabajas;
     ArrayList<Asignaturas> asignaturas ;
 
-    public Monitor(String nombre, int documento, String dependencia, String cargo, float salariosMinimo, int horas_trabajas, ArrayList<Asignaturas> asignaturas) {
+    public Monitor(String nombre, int documento, String dependencia, String cargo, float salariosMinimo, int horas_trabajas) {
         super(nombre, documento, dependencia, cargo, salariosMinimo);
         this.horas_trabajas = horas_trabajas;
-        this.asignaturas = asignaturas;
+        this.asignaturas= new ArrayList<Asignaturas>();
     }
 
     public int getHoras_trabajas() {

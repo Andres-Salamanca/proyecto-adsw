@@ -8,11 +8,11 @@ public class profesor extends Empleado{
     ArrayList<Asignaturas> asignaturas ;
 
 
-    public profesor(String nombre, int documento, String dependencia, String cargo, float salariosMinimo, int horas_trabajadas, String escalofon, ArrayList<Asignaturas> asignaturas) {
+    public profesor(String nombre, int documento, String dependencia, String cargo, float salariosMinimo, int horas_trabajadas, String escalofon) {
         super(nombre, documento, dependencia, cargo, salariosMinimo);
         this.horas_trabajadas = horas_trabajadas;
         this.escalofon = escalofon;
-        this.asignaturas = asignaturas;
+        this.asignaturas = new ArrayList<Asignaturas>();
     }
 
     public int getHoras_trabajadas() {

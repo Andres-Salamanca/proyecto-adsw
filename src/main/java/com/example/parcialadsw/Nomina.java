@@ -6,8 +6,8 @@ public class Nomina {
 
     public ArrayList <Empleado> empleados = new ArrayList<Empleado>();
 
-    public Nomina(ArrayList<Empleado> empleados) {
-        this.empleados = empleados;
+    public Nomina() {
+        this.empleados = new ArrayList<Empleado>();
     }
 
     public ArrayList<Empleado> getEmpleados() {
