@@ -22,7 +22,7 @@ public class Nomina {
         empleados.add(em);
 
     }
-    public void addProfesor(profesor pr){
+    public void addProfesor(Profesor pr){
         empleados.add(pr);
 
     }

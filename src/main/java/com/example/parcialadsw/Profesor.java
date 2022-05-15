@@ -2,13 +2,13 @@ package com.example.parcialadsw;
 
 import java.util.ArrayList;
 
-public class profesor extends Empleado{
+public class Profesor extends Empleado{
     protected int horas_trabajadas;
     protected int escalofon;
     ArrayList<Asignaturas> asignaturass ;
 
 
-    public profesor(String nombre, int documento, String dependencia, String cargo, float salariosMinimo, int horas_trabajadas, int escalofon) {
+    public Profesor(String nombre, int documento, String dependencia, String cargo, float salariosMinimo, int horas_trabajadas, int escalofon) {
         super(nombre, documento, dependencia, cargo, salariosMinimo);
         this.horas_trabajadas = horas_trabajadas;
         this.escalofon = escalofon;
