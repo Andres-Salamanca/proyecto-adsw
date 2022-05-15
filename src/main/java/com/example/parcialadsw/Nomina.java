@@ -17,4 +17,17 @@ public class Nomina {
     public void setEmpleados(ArrayList<Empleado> empleados) {
         this.empleados = empleados;
     }
+
+    public void addEmpleado(Empleado em){
+        empleados.add(em);
+
+    }
+    public void addProfesor(profesor pr){
+        empleados.add(pr);
+
+    }
+    public void addMonitor(Monitor mo){
+        empleados.add(mo);
+
+    }
 }

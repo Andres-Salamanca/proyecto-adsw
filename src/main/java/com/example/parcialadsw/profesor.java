@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class profesor extends Empleado{
     protected int horas_trabajadas;
-    protected String escalofon;
-    ArrayList<Asignaturas> asignaturas ;
+    protected int escalofon;
+    ArrayList<Asignaturas> asignaturass ;
 
 
-    public profesor(String nombre, int documento, String dependencia, String cargo, float salariosMinimo, int horas_trabajadas, String escalofon) {
+    public profesor(String nombre, int documento, String dependencia, String cargo, float salariosMinimo, int horas_trabajadas, int escalofon) {
         super(nombre, documento, dependencia, cargo, salariosMinimo);
         this.horas_trabajadas = horas_trabajadas;
         this.escalofon = escalofon;
-        this.asignaturas = new ArrayList<Asignaturas>();
+        this.asignaturass = new ArrayList<Asignaturas>();
     }
 
     public int getHoras_trabajadas() {
@@ -23,19 +23,31 @@ public class profesor extends Empleado{
         this.horas_trabajadas = horas_trabajadas;
     }
 
-    public String getEscalofon() {
+    public int getEscalofon() {
         return escalofon;
     }
 
-    public void setEscalofon(String escalofon) {
+    public void setEscalofon(int escalofon) {
         this.escalofon = escalofon;
     }
 
     public ArrayList<Asignaturas> getAsignaturas() {
-        return asignaturas;
+        return asignaturass;
     }
 
     public void setAsignaturas(ArrayList<Asignaturas> asignaturas) {
-        this.asignaturas = asignaturas;
+        this.asignaturass = asignaturas;
+    }
+
+    @Override
+    public double calcularSalario() {
+
+        return super.calcularSalario();
+        //este no esta completado
+    }
+
+    public void addAsignatura(Asignaturas as){
+        asignaturass.add(as);
+
     }
 }

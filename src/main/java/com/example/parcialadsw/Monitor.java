@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Monitor extends Empleado{
     protected int horas_trabajas;
-    ArrayList<Asignaturas> asignaturas ;
+    ArrayList<Asignaturas> asignaturass ;
 
     public Monitor(String nombre, int documento, String dependencia, String cargo, float salariosMinimo, int horas_trabajas) {
         super(nombre, documento, dependencia, cargo, salariosMinimo);
         this.horas_trabajas = horas_trabajas;
-        this.asignaturas= new ArrayList<Asignaturas>();
+        this.asignaturass= new ArrayList<Asignaturas>();
     }
 
     public int getHoras_trabajas() {
@@ -21,10 +21,21 @@ public class Monitor extends Empleado{
     }
 
     public ArrayList<Asignaturas> getAsignaturas() {
-        return asignaturas;
+        return asignaturass;
     }
 
     public void setAsignaturas(ArrayList<Asignaturas> asignaturas) {
-        this.asignaturas = asignaturas;
+        this.asignaturass = asignaturas;
+    }
+
+    @Override
+    public double calcularSalario() {
+        return super.calcularSalario();
+        //no esta completado
+    }
+
+    public void addAsignatura(Asignaturas as){
+        asignaturass.add(as);
+
     }
 }
