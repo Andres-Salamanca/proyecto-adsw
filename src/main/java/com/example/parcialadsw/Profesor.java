@@ -8,11 +8,24 @@ public class Profesor extends Empleado{
     ArrayList<Asignaturas> asignaturass ;
 
 
-    public Profesor(String nombre, int documento, String dependencia, String cargo, float salariosMinimo, int horas_trabajadas, int escalofon) {
+    public Profesor(String nombre, int documento, String dependencia, String cargo, float salariosMinimo, int horas_trabajadas , int escalofon) {
         super(nombre, documento, dependencia, cargo, salariosMinimo);
         this.horas_trabajadas = horas_trabajadas;
         this.escalofon = escalofon;
         this.asignaturass = new ArrayList<Asignaturas>();
+        if(this.escalofon == 1){
+            this.salariosMinimo = 5;
+        }
+        else if (this.escalofon == 2){
+            this.salariosMinimo = 2;
+        }
+        else if (this.escalofon == 3){
+            this.salariosMinimo = 3;
+        }
+        else if (this.escalofon == 4){
+            this.salariosMinimo = 7;
+        }
+
     }
 
     public int getHoras_trabajadas() {
@@ -41,9 +54,13 @@ public class Profesor extends Empleado{
 
     @Override
     public double calcularSalario() {
+        double horas=0;
+        for (int i =0 ; i < asignaturass.size();i++){
+            horas += asignaturass.get(i).getHoras() ;
+        }
+        double salario = (salariosMinimo * salarioMinimo * horas)*0.88;
+        return salario;
 
-        return super.calcularSalario();
-        //este no esta completado
     }
 
     public void addAsignatura(Asignaturas as){

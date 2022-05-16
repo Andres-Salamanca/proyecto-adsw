@@ -30,8 +30,12 @@ public class Monitor extends Empleado{
 
     @Override
     public double calcularSalario() {
-        return super.calcularSalario();
-        //no esta completado
+        double horas=0;
+        for (int i =0 ; i < asignaturass.size();i++){
+            horas += asignaturass.get(i).getHoras() ;
+        }
+        double salario = horas * horas_trabajas;
+        return salario;
     }
 
     public void addAsignatura(Asignaturas as){

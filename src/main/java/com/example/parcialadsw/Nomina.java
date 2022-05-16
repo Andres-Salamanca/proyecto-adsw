@@ -30,4 +30,16 @@ public class Nomina {
         empleados.add(mo);
 
     }
+    public double calcularsalario(int doc){
+        double sla =0;
+        for(int i = 0 ;i <empleados.size();i++){
+            if(empleados.get(i).getDocumento() == doc){
+                sla = empleados.get(i).calcularSalario();
+
+            }
+
+        }
+        return sla;
+
+    }
 }
