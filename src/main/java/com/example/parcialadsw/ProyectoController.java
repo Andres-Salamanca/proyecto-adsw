@@ -101,16 +101,50 @@ public class ProyectoController implements Initializable {
 
     @FXML
     void crearEmpleado(ActionEvent event) {
+        String nombre ="";
+        int documento =0;
+        String dependencia;
+        String cargo ="";
+        float salariosMinimo;
 
+        nombre = campoNombrePEmpleado.getText();
+        documento = Integer.parseInt(campoNombrePEmpleado.getText());
+        dependencia = listaDependenciaEmpleado.getSelectionModel().getSelectedItem();
+        cargo = lCargos.getSelectionModel().getSelectedItem();
+        salariosMinimo = Float.parseFloat(campoCantSalMinEmpleado.getText());
+        System.out.println(nombre +""+documento+""+dependencia+""+cargo+""+salariosMinimo);
     }
 
     @FXML
     void crearMonitor(ActionEvent event) {
+        String nombre ="";
+        int documento =0;
+        String dependencia;
 
+        float salariosMinimo;
+
+        nombre = campoNombreMonitor.getText();
+        documento = Integer.parseInt(campoIDMonitor.getText());
+        dependencia = listaDependenciaMonitor.getSelectionModel().getSelectedItem();
+        salariosMinimo = Float.parseFloat(campoCantSalMinMonitor.getText());
+        System.out.println(nombre +""+documento+""+dependencia+""+salariosMinimo);
     }
 
     @FXML
     void crearProfesor(ActionEvent event) {
+        String nombre ="";
+        int documento =0;
+        String dependencia;
+        int escalafono;
+        float salariosMinimo;
+
+        nombre = campoNombreProfesor.getText();
+        documento = Integer.parseInt(campoIDProfesor.getText());
+        dependencia = listaDependenciaProfesor.getSelectionModel().getSelectedItem();
+        escalafono =  Integer.parseInt(bEscalafonoProfesor.getValue());
+        salariosMinimo = Float.parseFloat(campoCantSalMinProfesor.getText());
+
+        System.out.println(nombre +""+documento+""+dependencia+""+escalafono+""+salariosMinimo);
 
     }
 
