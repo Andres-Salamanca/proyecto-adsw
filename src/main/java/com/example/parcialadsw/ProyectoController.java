@@ -18,8 +18,10 @@ public class ProyectoController implements Initializable {
     private Button bCargarArchivo;
 
     @FXML
+    private Button bCrearMonitor;
+
+    @FXML
     private ChoiceBox<String> bEscalafonoProfesor;
-    String [] valEscalafono ={"1","2","3","4"};
 
     @FXML
     private Button bGuardarArchivo;
@@ -28,24 +30,42 @@ public class ProyectoController implements Initializable {
     private Button botonCrearProfesor;
 
     @FXML
+    private TextField campoCantSalMinMonitor;
+
+    @FXML
     private TextField campoCantSalMinProfesor;
+
+    @FXML
+    private TextField campoIDMonitor;
 
     @FXML
     private TextField campoIDProfesor;
 
     @FXML
+    private TextField campoNombreMonitor;
+
+    @FXML
     private TextField campoNombreProfesor;
 
     @FXML
+    private ComboBox<String> comboAsignaturasMonitor;
+
+    @FXML
     private ComboBox<String> comboAsignaturasProfesor;
-    String [] asignaturas = {"POB","ADSw","BD","CYR","CDIO","CALCULO1","CALCULO2","ARQUITECTURA_PC"};
+
+    @FXML
+    private ListView<String> listaDependenciaMonitor;
 
     @FXML
     private ListView<String> listaDependenciaProfesor;
-    String [] oficina = {"SUR","NORTE","CENTRAL","ORIENTE","OCCIDENTE", "H", "JB","NSDC"};
 
     @FXML
     void cargarArchivo(ActionEvent event) {
+
+    }
+
+    @FXML
+    void crearMonitor(ActionEvent event) {
 
     }
 
@@ -58,11 +78,17 @@ public class ProyectoController implements Initializable {
     void guardarArchivo(ActionEvent event) {
 
     }
+    String [] asignaturas = {"POB","ADSw","BD","CYR","CDIO","CALCULO1","CALCULO2","ARQUITECTURA_PC"};
+    String [] oficina = {"SUR","NORTE","CENTRAL","ORIENTE","OCCIDENTE", "H", "JB","NSDC"};
+    String [] valEscalafono ={"1","2","3","4"};
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         bEscalafonoProfesor.getItems().addAll(valEscalafono);
         listaDependenciaProfesor.getItems().addAll(oficina);
         comboAsignaturasProfesor.getItems().addAll(asignaturas);
+        listaDependenciaMonitor.getItems().addAll(oficina);
+        comboAsignaturasMonitor.getItems().addAll(asignaturas);
     }
 }
