@@ -1,16 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.parcialadsw.ProyectoController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parcialadsw.ProyectoController">
+    <children>
+        <TabPane layoutX="14.0" layoutY="56.0" prefHeight="330.0" prefWidth="578.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Profesor">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextField fx:id="campoNombreProfesor" layoutX="33.0" layoutY="29.0" prefHeight="25.0" prefWidth="314.0" promptText="Nombre" />
+                                <TextField fx:id="campoIDProfesor" layoutX="33.0" layoutY="62.0" prefHeight="25.0" prefWidth="314.0" promptText="Documento" />
+                                <ListView fx:id="listaDependenciaProfesor" layoutX="33.0" layoutY="99.0" prefHeight="41.0" prefWidth="313.0" />
+                                <TextField fx:id="campoCantSalMinProfesor" layoutX="33.0" layoutY="151.0" prefHeight="25.0" prefWidth="104.0" promptText="# SMVM" />
+                                <ComboBox fx:id="comboAsignaturasProfesor" layoutX="33.0" layoutY="190.0" prefHeight="25.0" prefWidth="182.0" />
+                                <ChoiceBox fx:id="bEscalafonoProfesor" layoutX="145.0" layoutY="151.0" prefHeight="25.0" prefWidth="105.0" />
+                                <Button fx:id="botonCrearProfesor" layoutX="33.0" layoutY="228.0" mnemonicParsing="false" onAction="#crearProfesor" prefHeight="43.0" prefWidth="170.0" text="Crear" />
+                                <Text layoutX="274.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dependencia" />
+                                <Text layoutX="33.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asignaturas" wrappingWidth="71.927734375">
+                                    <font>
+                                        <Font size="10.0" />
+                                    </font>
+                                </Text>
+                                <Text layoutX="145.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Escalofono">
+                                    <font>
+                                        <Font size="10.0" />
+                                    </font>
+                                </Text>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Monitor">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                </Tab>
+                <Tab text="Empleado">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                </Tab>
+                <Tab text="Salario">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button fx:id="bCargarArchivo" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#cargarArchivo" prefHeight="35.0" prefWidth="286.0" text="Cargar Archivo" />
+        <Button fx:id="bGuardarArchivo" layoutX="303.0" layoutY="14.0" mnemonicParsing="false" onAction="#guardarArchivo" prefHeight="35.0" prefWidth="286.0" text="Guardar Archivo" />
+    </children>
+</AnchorPane>
