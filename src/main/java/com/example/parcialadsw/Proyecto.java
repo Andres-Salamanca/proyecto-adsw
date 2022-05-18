@@ -17,7 +17,6 @@ public class Proyecto extends Application {
         stage.setScene(scene);
         stage.show();
         stage.setTitle("Parcial");
-
     }
 
     public static void main(String[] args) {

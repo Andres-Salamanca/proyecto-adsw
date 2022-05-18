@@ -18,6 +18,12 @@ public class ProyectoController implements Initializable {
     private Button bCargarArchivo;
 
     @FXML
+    private Button bConsultarSal;
+
+    @FXML
+    private Button bCrearEmpleado;
+
+    @FXML
     private Button bCrearMonitor;
 
     @FXML
@@ -30,10 +36,16 @@ public class ProyectoController implements Initializable {
     private Button botonCrearProfesor;
 
     @FXML
+    private TextField campoCantSalMinEmpleado;
+
+    @FXML
     private TextField campoCantSalMinMonitor;
 
     @FXML
     private TextField campoCantSalMinProfesor;
+
+    @FXML
+    private TextField campoIDEmpleado;
 
     @FXML
     private TextField campoIDMonitor;
@@ -45,6 +57,9 @@ public class ProyectoController implements Initializable {
     private TextField campoNombreMonitor;
 
     @FXML
+    private TextField campoNombrePEmpleado;
+
+    @FXML
     private TextField campoNombreProfesor;
 
     @FXML
@@ -54,13 +69,38 @@ public class ProyectoController implements Initializable {
     private ComboBox<String> comboAsignaturasProfesor;
 
     @FXML
+    private ComboBox<String> lCargos;
+
+    @FXML
+    private ListView<String> listaDependenciaEmpleado;
+
+    @FXML
     private ListView<String> listaDependenciaMonitor;
 
     @FXML
     private ListView<String> listaDependenciaProfesor;
 
     @FXML
+    private TextField salarioArchivo;
+
+    @FXML
+    private TextField salarioDocumento;
+
+    @FXML
+    private TextField salarioNombre;
+
+    @FXML
     void cargarArchivo(ActionEvent event) {
+
+    }
+
+    @FXML
+    void consultarSalario(ActionEvent event) {
+
+    }
+
+    @FXML
+    void crearEmpleado(ActionEvent event) {
 
     }
 
@@ -81,7 +121,7 @@ public class ProyectoController implements Initializable {
     String [] asignaturas = {"POB","ADSw","BD","CYR","CDIO","CALCULO1","CALCULO2","ARQUITECTURA_PC"};
     String [] oficina = {"SUR","NORTE","CENTRAL","ORIENTE","OCCIDENTE", "H", "JB","NSDC"};
     String [] valEscalafono ={"1","2","3","4"};
-
+    String [] cargos ={"ADMINISTRATIVO","SERVICIOS","ALIMENTACION","TESORERIA","CONSEJERIA"};
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -90,5 +130,7 @@ public class ProyectoController implements Initializable {
         comboAsignaturasProfesor.getItems().addAll(asignaturas);
         listaDependenciaMonitor.getItems().addAll(oficina);
         comboAsignaturasMonitor.getItems().addAll(asignaturas);
+        listaDependenciaEmpleado.getItems().addAll(oficina);
+        lCargos.getItems().addAll(cargos);
     }
 }
