@@ -27,10 +27,13 @@ public class ProyectoController implements Initializable {
 
     @FXML
     private Button bCrearMonitor;
+    @FXML
+    private Button bGenerarNomina;
 
     @FXML
     private ChoiceBox<String> bEscalafonoProfesor;
-
+    @FXML
+    private Button bAgregarAsignatura;
     @FXML
     private Button bGuardarArchivo;
 
@@ -63,13 +66,8 @@ public class ProyectoController implements Initializable {
 
     @FXML
     private TextField campoNombreProfesor;
-
     @FXML
-    private ComboBox<String> comboAsignaturasMonitor;
-
-    @FXML
-    private ComboBox<String> comboAsignaturasProfesor;
-
+    private ComboBox<String> comboAsignaturas;
     @FXML
     private ComboBox<String> lCargos;
 
@@ -90,6 +88,8 @@ public class ProyectoController implements Initializable {
 
     @FXML
     private TextField salarioNombre;
+    @FXML
+    private TextField documentoIDAsignaturas;
 
     @FXML
     void cargarArchivo(ActionEvent event) {
@@ -98,6 +98,10 @@ public class ProyectoController implements Initializable {
 
     @FXML
     void consultarSalario(ActionEvent event) {
+
+    }
+    @FXML
+    void agregarAsignatura(ActionEvent event) {
 
     }
 
@@ -153,6 +157,10 @@ public class ProyectoController implements Initializable {
         minomina.crear_profesor(nombre,documento,dependencia,cargo,salariosMinimo,0,escalafono);
 
     }
+    @FXML
+    void generarNomina(ActionEvent event) {
+
+    }
 
     @FXML
     void guardarArchivo(ActionEvent event) {
@@ -161,15 +169,14 @@ public class ProyectoController implements Initializable {
     String [] asignaturas = {"POB","ADSw","BD","CYR","CDIO","CALCULO1","CALCULO2","ARQUITECTURA_PC"};
     String [] oficina = {"SUR","NORTE","CENTRAL","ORIENTE","OCCIDENTE", "H", "JB","NSDC"};
     String [] valEscalafono ={"1","2","3","4"};
-    String [] cargos ={"ADMINISTRATIVO","SERVICIOS","ALIMENTACION","TESORERIA","CONSEJERIA"};
+    String [] cargos ={"ADMINISTRATIVO","SERVICIOS","ALIMENTACION","TESORERIA","CONSEJERIA","CLERIGO"};
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         bEscalafonoProfesor.getItems().addAll(valEscalafono);
         listaDependenciaProfesor.getItems().addAll(oficina);
-        comboAsignaturasProfesor.getItems().addAll(asignaturas);
+        comboAsignaturas.getItems().addAll(asignaturas);
         listaDependenciaMonitor.getItems().addAll(oficina);
-        comboAsignaturasMonitor.getItems().addAll(asignaturas);
         listaDependenciaEmpleado.getItems().addAll(oficina);
         lCargos.getItems().addAll(cargos);
     }
