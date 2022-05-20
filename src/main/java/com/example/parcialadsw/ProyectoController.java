@@ -14,6 +14,8 @@ import java.util.ResourceBundle;
 
 public class ProyectoController implements Initializable {
 
+    Nomina minomina = new Nomina();
+
     @FXML
     private Button bCargarArchivo;
 
@@ -113,6 +115,8 @@ public class ProyectoController implements Initializable {
         cargo = lCargos.getSelectionModel().getSelectedItem();
         salariosMinimo = Float.parseFloat(campoCantSalMinEmpleado.getText());
         System.out.println(nombre +""+documento+""+dependencia+""+cargo+""+salariosMinimo);
+        minomina.crear_empleado(nombre,documento,dependencia,cargo,salariosMinimo);
+
     }
 
     @FXML
@@ -122,12 +126,13 @@ public class ProyectoController implements Initializable {
         String dependencia;
 
         float salariosMinimo;
-
+        String cargo = "monitor";
         nombre = campoNombreMonitor.getText();
         documento = Integer.parseInt(campoIDMonitor.getText());
         dependencia = listaDependenciaMonitor.getSelectionModel().getSelectedItem();
         salariosMinimo = Float.parseFloat(campoCantSalMinMonitor.getText());
         System.out.println(nombre +""+documento+""+dependencia+""+salariosMinimo);
+        minomina.crear_monitor(nombre,documento,dependencia,cargo,salariosMinimo,0);
     }
 
     @FXML
@@ -137,7 +142,7 @@ public class ProyectoController implements Initializable {
         String dependencia;
         int escalafono;
         float salariosMinimo;
-
+        String cargo = "profesor";
         nombre = campoNombreProfesor.getText();
         documento = Integer.parseInt(campoIDProfesor.getText());
         dependencia = listaDependenciaProfesor.getSelectionModel().getSelectedItem();
@@ -145,6 +150,7 @@ public class ProyectoController implements Initializable {
         salariosMinimo = Float.parseFloat(campoCantSalMinProfesor.getText());
 
         System.out.println(nombre +""+documento+""+dependencia+""+escalafono+""+salariosMinimo);
+        minomina.crear_profesor(nombre,documento,dependencia,cargo,salariosMinimo,0,escalafono);
 
     }
 
