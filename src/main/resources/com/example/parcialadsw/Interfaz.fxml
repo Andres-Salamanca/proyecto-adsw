@@ -86,8 +86,8 @@
             </Tab>
             </tabs>
         </TabPane>
-        <Button fx:id="bCargarArchivo" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#cargarArchivo" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #BE99F2; -fx-border-color: red; -fx-background-insets: 0; -fx-background-radius: 4; -fx-border-radius: 4;" text="Cargar Archivo" />
-        <Button fx:id="bGuardarArchivo" layoutX="303.0" layoutY="14.0" mnemonicParsing="false" onAction="#guardarArchivo" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #BE99F2; -fx-border-color: red; -fx-background-insets: 0; -fx-background-radius: 4; -fx-border-radius: 4;" text="Guardar Archivo" />
-      <Button fx:id="bGenerarNomina" layoutX="13.0" layoutY="56.0" mnemonicParsing="false" onAction="#generarNomina" prefHeight="29.0" prefWidth="578.0" style="-fx-background-color: #BE99F2; -fx-border-color: red; -fx-background-insets: 0; -fx-background-radius: 4; -fx-border-radius: 4;" text="Generar Nomina" />
+        <Button fx:id="bCargarArchivo" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#cargarArchivo" prefHeight="35.0" prefWidth="286.0" style="-fx-border-color: red; -fx-background-insets: 0; -fx-background-radius: 4; -fx-border-radius: 4;" text="Cargar Archivo" />
+        <Button fx:id="bGuardarArchivo" layoutX="303.0" layoutY="14.0" mnemonicParsing="false" onAction="#guardarArchivo" prefHeight="35.0" prefWidth="286.0" style="-fx-border-color: red; -fx-background-insets: 0; -fx-background-radius: 4; -fx-border-radius: 4;" text="Guardar Archivo" />
+      <Button fx:id="bGenerarNomina" layoutX="13.0" layoutY="56.0" mnemonicParsing="false" onAction="#generarNomina" prefHeight="29.0" prefWidth="578.0" style="-fx-border-color: red; -fx-background-insets: 0; -fx-background-radius: 4; -fx-border-radius: 4;" text="Generar Nomina" />
     </children>
 </AnchorPane>
