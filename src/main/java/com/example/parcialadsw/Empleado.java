@@ -64,7 +64,7 @@ public class Empleado {
 
     public double calcularSalario(){
         double sala=0;
-        sala = (this.salariosMinimo * salarioMinimo)* 0.88;
+        sala = (salariosMinimo * salarioMinimo)* 0.88;
         return sala;
     }
 

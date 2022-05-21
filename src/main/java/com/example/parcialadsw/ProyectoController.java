@@ -107,54 +107,94 @@ public class ProyectoController implements Initializable {
 
     @FXML
     void crearEmpleado(ActionEvent event) {
-        String nombre ="";
-        int documento =0;
-        String dependencia;
-        String cargo ="";
-        float salariosMinimo;
+        try {
+            String nombre ="";
+            int documento =0;
+            String dependencia;
+            String cargo ="";
+            float salariosMinimo;
 
-        nombre = campoNombrePEmpleado.getText();
-        documento = Integer.parseInt(campoNombrePEmpleado.getText());
-        dependencia = listaDependenciaEmpleado.getSelectionModel().getSelectedItem();
-        cargo = lCargos.getSelectionModel().getSelectedItem();
-        salariosMinimo = Float.parseFloat(campoCantSalMinEmpleado.getText());
-        System.out.println(nombre +""+documento+""+dependencia+""+cargo+""+salariosMinimo);
-        minomina.crear_empleado(nombre,documento,dependencia,cargo,salariosMinimo);
+            nombre = campoNombrePEmpleado.getText();
+            documento = Integer.parseInt(campoNombrePEmpleado.getText());
+            dependencia = listaDependenciaEmpleado.getSelectionModel().getSelectedItem();
+            cargo = lCargos.getSelectionModel().getSelectedItem();
+            salariosMinimo = Float.parseFloat(campoCantSalMinEmpleado.getText());
+            System.out.println(nombre +""+documento+""+dependencia+""+cargo+""+salariosMinimo);
+            minomina.crear_empleado(nombre,documento,dependencia,cargo,salariosMinimo);
+
+        }
+        catch (empleadoexep e ){
+
+        }
+        catch (Nominaexep e  ){
+
+        }
+        catch (Exception e){
+
+        }
+
+
 
     }
 
     @FXML
     void crearMonitor(ActionEvent event) {
-        String nombre ="";
-        int documento =0;
-        String dependencia;
+        try {
+            String nombre ="";
+            int documento =0;
+            String dependencia;
 
-        float salariosMinimo;
-        String cargo = "monitor";
-        nombre = campoNombreMonitor.getText();
-        documento = Integer.parseInt(campoIDMonitor.getText());
-        dependencia = listaDependenciaMonitor.getSelectionModel().getSelectedItem();
-        salariosMinimo = Float.parseFloat(campoCantSalMinMonitor.getText());
-        System.out.println(nombre +""+documento+""+dependencia+""+salariosMinimo);
-        minomina.crear_monitor(nombre,documento,dependencia,cargo,salariosMinimo,0);
+            float salariosMinimo;
+            String cargo = "monitor";
+            nombre = campoNombreMonitor.getText();
+            documento = Integer.parseInt(campoIDMonitor.getText());
+            dependencia = listaDependenciaMonitor.getSelectionModel().getSelectedItem();
+            salariosMinimo = Float.parseFloat(campoCantSalMinMonitor.getText());
+            System.out.println(nombre +""+documento+""+dependencia+""+salariosMinimo);
+            minomina.crear_monitor(nombre,documento,dependencia,cargo,salariosMinimo,0);
+
+        }
+        catch (monitorexep e ){
+
+        }
+        catch (Nominaexep e ){
+
+        }
+        catch (Exception e ){
+
+        }
+
     }
 
     @FXML
     void crearProfesor(ActionEvent event) {
-        String nombre ="";
-        int documento =0;
-        String dependencia;
-        int escalafono;
-        float salariosMinimo;
-        String cargo = "profesor";
-        nombre = campoNombreProfesor.getText();
-        documento = Integer.parseInt(campoIDProfesor.getText());
-        dependencia = listaDependenciaProfesor.getSelectionModel().getSelectedItem();
-        escalafono =  Integer.parseInt(bEscalafonoProfesor.getValue());
-        salariosMinimo = Float.parseFloat(campoCantSalMinProfesor.getText());
+        try {
+            String nombre ="";
+            int documento =0;
+            String dependencia;
+            int escalafono;
+            float salariosMinimo;
+            String cargo = "profesor";
+            nombre = campoNombreProfesor.getText();
+            documento = Integer.parseInt(campoIDProfesor.getText());
+            dependencia = listaDependenciaProfesor.getSelectionModel().getSelectedItem();
+            escalafono =  Integer.parseInt(bEscalafonoProfesor.getValue());
+            salariosMinimo = Float.parseFloat(campoCantSalMinProfesor.getText());
 
-        System.out.println(nombre +""+documento+""+dependencia+""+escalafono+""+salariosMinimo);
-        minomina.crear_profesor(nombre,documento,dependencia,cargo,salariosMinimo,0,escalafono);
+            System.out.println(nombre +""+documento+""+dependencia+""+escalafono+""+salariosMinimo);
+            minomina.crear_profesor(nombre,documento,dependencia,cargo,salariosMinimo,0,escalafono);
+
+        }
+        catch (profesorexep e){
+
+        }
+        catch (Nominaexep e){
+
+        }
+        catch (Exception e){
+
+        }
+
 
     }
     @FXML
