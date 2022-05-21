@@ -8,6 +8,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -79,7 +80,8 @@ public class ProyectoController implements Initializable {
 
     @FXML
     private ListView<String> listaDependenciaProfesor;
-
+    @FXML
+    private Text mError;
     @FXML
     private TextField salarioArchivo;
 
