@@ -63,8 +63,15 @@ public class Profesor extends Empleado{
 
     }
 
-    public void addAsignatura(Asignaturas as){
+    /*public void addAsignatura(Asignaturas as){
         asignaturass.add(as);
 
+    }*/
+    public void anadir_asignatura(String nombreasignatura){
+        Asignaturas asignatura_nueva = new Asignaturas(nombreasignatura );
+        asignaturass.add(asignatura_nueva);
+        for(int i = 0;i<asignaturass.size();i ++){
+            System.out.println(asignaturass.get(i).getHoras() + asignaturass.get(i).getNombre());
+        }
     }
 }

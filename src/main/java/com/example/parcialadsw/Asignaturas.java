@@ -8,6 +8,30 @@ public class Asignaturas {
         this.nombre = nombre;
         this.horas = horas;
     }
+    public Asignaturas(String nombre){
+        this.nombre = nombre;
+
+        if (nombre.equalsIgnoreCase("POO")){
+            this.horas = 16;
+        }
+        else if (nombre.equalsIgnoreCase("ADSw")){
+            this.horas = 16;
+        } else if (nombre.equalsIgnoreCase("BD")) {
+            this.horas = 16;
+        } else if (nombre.equalsIgnoreCase("CYR")) {
+            this.horas = 24;
+        } else if (nombre.equalsIgnoreCase("CDIO")) {
+            this.horas = 12;
+        }else if (nombre.equalsIgnoreCase("CALCULO1")) {
+            this.horas = 24;
+        }else if (nombre.equalsIgnoreCase("CALCULO2")) {
+            this.horas = 24;
+        }
+        else if (nombre.equalsIgnoreCase("ARQUITECTURA_PC")) {
+            this.horas = 12;
+        }
+
+    }
 
     public String getNombre() {
         return nombre;

@@ -34,12 +34,21 @@ public class Monitor extends Empleado{
         for (int i =0 ; i < asignaturass.size();i++){
             horas += asignaturass.get(i).getHoras() ;
         }
-        double salario = horas * horas_trabajas;
+        System.out.println("estas son las horas que tiene"+horas);
+        double salario = horas * salariosMinimo * salarioMinimo;
+        System.out.println("salario del monitor:"+salario);
         return salario;
     }
 
-    public void addAsignatura(Asignaturas as){
+    /*public void addAsignatura(Asignaturas as){
         asignaturass.add(as);
 
+    }*/
+    public void anadir_asignatura(String nombreasignatura){
+        Asignaturas asignatura_nueva = new Asignaturas(nombreasignatura );
+        asignaturass.add(asignatura_nueva);
+        for(int i = 0;i<asignaturass.size();i ++){
+            System.out.println(asignaturass.get(i).getHoras() + asignaturass.get(i).getNombre());
+        }
     }
 }

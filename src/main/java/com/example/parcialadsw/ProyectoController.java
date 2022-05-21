@@ -99,15 +99,60 @@ public class ProyectoController implements Initializable {
     @FXML
     void consultarSalario(ActionEvent event) {
 
+        try{
+
+            int documen = Integer.parseInt(salarioDocumento.getText());
+            double salario = minomina.calcularsalario(documen);
+            salarioArchivo.setText(String.valueOf(salario));
+            int posicion = minomina.buscar_persona_calcularsalario(documen);
+            salarioNombre.setText(minomina.empleados.get(posicion).getNombre());
+        }
+        catch(Nominaexep e){
+            System.out.println("mensaje:"+e);
+        }
+        catch(profesorexep e){
+            System.out.println("mensaje:"+e);
+
+        }
+        catch(monitorexep e){
+            System.out.println("mensaje:"+e);
+
+        }
+        catch(empleadoexep e){
+            System.out.println("mensaje:"+e);
+
+        }
+
     }
     @FXML
     void agregarAsignatura(ActionEvent event) {
+        try {
+            String asig =comboAsignaturas.getValue();
+            int docum = Integer.parseInt(documentoIDAsignaturas.getText());
+            minomina.anadir_asig(docum,asig);
+        }
+        catch (Nominaexep e){
+            System.out.println("mensaje: "+ e);
+        }
+        catch (profesorexep e){
+            System.out.println("mensaje: "+ e);
+        }
+        catch (monitorexep e){
+            System.out.println("mensaje: "+ e);
+        }
+        catch (Exception e){
+            System.out.println("mensaje: "+ e);
+        }
+
+
 
     }
 
     @FXML
     void crearEmpleado(ActionEvent event) {
+        System.out.println("entro");
         try {
+            System.out.println("entro2");
             String nombre ="";
             int documento =0;
             String dependencia;
@@ -115,7 +160,7 @@ public class ProyectoController implements Initializable {
             float salariosMinimo;
 
             nombre = campoNombrePEmpleado.getText();
-            documento = Integer.parseInt(campoNombrePEmpleado.getText());
+            documento = Integer.parseInt(campoIDEmpleado.getText());
             dependencia = listaDependenciaEmpleado.getSelectionModel().getSelectedItem();
             cargo = lCargos.getSelectionModel().getSelectedItem();
             salariosMinimo = Float.parseFloat(campoCantSalMinEmpleado.getText());
@@ -124,13 +169,21 @@ public class ProyectoController implements Initializable {
 
         }
         catch (empleadoexep e ){
+            System.out.println("mensaje:" + e);
+           /*for(int i =0 ; i < minomina.empleados.size();i++){
+                System.out.println(minomina.empleados.get(i).documento);
+            }*/
 
         }
         catch (Nominaexep e  ){
+            System.out.println("mensaje:" + e);
+            /*for(int i =0 ; i < minomina.empleados.size();i++){
+                System.out.println(minomina.empleados.get(i).documento);
+            }*/
 
         }
         catch (Exception e){
-
+            System.out.println("mensaje:" + e);
         }
 
 
@@ -155,9 +208,16 @@ public class ProyectoController implements Initializable {
 
         }
         catch (monitorexep e ){
-
+            System.out.println("mensaje:" + e);
+            /*for(int i =0 ; i < minomina.empleados.size();i++){
+                System.out.println(minomina.empleados.get(i).documento);
+            }*/
         }
         catch (Nominaexep e ){
+            System.out.println("mensaje:" + e);
+            /*for(int i =0 ; i < minomina.empleados.size();i++){
+                System.out.println(minomina.empleados.get(i).documento);
+            }*/
 
         }
         catch (Exception e ){
@@ -186,9 +246,17 @@ public class ProyectoController implements Initializable {
 
         }
         catch (profesorexep e){
+            System.out.println("mensaje:" + e);
+           /*for(int i =0 ; i < minomina.empleados.size();i++){
+                System.out.println(minomina.empleados.get(i).documento);
+            }*/
 
         }
         catch (Nominaexep e){
+            System.out.println("mensaje:" + e);
+            /*for(int i =0 ; i < minomina.empleados.size();i++){
+                System.out.println(minomina.empleados.get(i).documento);
+            }*/
 
         }
         catch (Exception e){
@@ -206,7 +274,7 @@ public class ProyectoController implements Initializable {
     void guardarArchivo(ActionEvent event) {
 
     }
-    String [] asignaturas = {"POB","ADSw","BD","CYR","CDIO","CALCULO1","CALCULO2","ARQUITECTURA_PC"};
+    String [] asignaturas = {"POO","ADSw","BD","CYR","CDIO","CALCULO1","CALCULO2","ARQUITECTURA_PC"};
     String [] oficina = {"SUR","NORTE","CENTRAL","ORIENTE","OCCIDENTE", "H", "JB","NSDC"};
     String [] valEscalafono ={"1","2","3","4"};
     String [] cargos ={"ADMINISTRATIVO","SERVICIOS","ALIMENTACION","TESORERIA","CONSEJERIA","CLERIGO"};

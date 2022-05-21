@@ -18,7 +18,7 @@ public class Nomina {
         this.empleados = empleados;
     }
 
-    public void addEmpleado(Empleado em){
+    /*public void addEmpleado(Empleado em){
         empleados.add(em);
 
     }
@@ -29,7 +29,7 @@ public class Nomina {
     public void addMonitor(Monitor mo){
         empleados.add(mo);
 
-    }
+    }*/
     public double calcularsalario(int doc) throws Nominaexep , monitorexep , profesorexep,empleadoexep{
         double sla =0;
         int encontro = buscar_persona_calcularsalario(doc);
@@ -87,7 +87,7 @@ public class Nomina {
             if (empleados.get(i).getDocumento() == documento){
                 encontro = i;
             }
-            else if (empleados.get(i).getDocumento() != documento) {
+            else if (empleados.get(i).getDocumento() != documento && empleados.size() == i) {
 
                 throw new Nominaexep("No se encontro persona con el documento");
             }
@@ -109,4 +109,17 @@ public class Nomina {
         return repetido;
 
     }
+    public void anadir_asig(int documento , String nombreasignatura)throws Nominaexep, profesorexep,monitorexep{
+        int existe =buscar_persona_calcularsalario(documento) ;
+
+        if(existe == -1){
+            throw new profesorexep("no hay profesor para asignar asignatura");
+
+        } else if (existe !=-1 && empleados.get(existe) instanceof Profesor) {
+            ((Profesor) empleados.get(existe)).anadir_asignatura(nombreasignatura);
+        } else if (existe !=-1 && empleados.get(existe) instanceof Monitor) {
+            ((Monitor) empleados.get(existe)).anadir_asignatura(nombreasignatura);
+        }
+    }
+
 }
