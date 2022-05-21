@@ -134,15 +134,19 @@ public class ProyectoController implements Initializable {
             minomina.anadir_asig(docum,asig);
         }
         catch (Nominaexep e){
+            mError.setText(e.toString());
             System.out.println("mensaje: "+ e);
         }
         catch (profesorexep e){
+            mError.setText(e.toString());
             System.out.println("mensaje: "+ e);
         }
         catch (monitorexep e){
+            mError.setText(e.toString());
             System.out.println("mensaje: "+ e);
         }
         catch (Exception e){
+            mError.setText(e.toString());
             System.out.println("mensaje: "+ e);
         }
 
@@ -171,6 +175,7 @@ public class ProyectoController implements Initializable {
 
         }
         catch (empleadoexep e ){
+            mError.setText(e.toString());
             System.out.println("mensaje:" + e);
            /*for(int i =0 ; i < minomina.empleados.size();i++){
                 System.out.println(minomina.empleados.get(i).documento);
@@ -178,6 +183,7 @@ public class ProyectoController implements Initializable {
 
         }
         catch (Nominaexep e  ){
+            mError.setText(e.toString());
             System.out.println("mensaje:" + e);
             /*for(int i =0 ; i < minomina.empleados.size();i++){
                 System.out.println(minomina.empleados.get(i).documento);
@@ -185,6 +191,7 @@ public class ProyectoController implements Initializable {
 
         }
         catch (Exception e){
+            mError.setText(e.toString());
             System.out.println("mensaje:" + e);
         }
 
@@ -210,12 +217,14 @@ public class ProyectoController implements Initializable {
 
         }
         catch (monitorexep e ){
+            mError.setText(e.toString());
             System.out.println("mensaje:" + e);
             /*for(int i =0 ; i < minomina.empleados.size();i++){
                 System.out.println(minomina.empleados.get(i).documento);
             }*/
         }
         catch (Nominaexep e ){
+            mError.setText(e.toString());
             System.out.println("mensaje:" + e);
             /*for(int i =0 ; i < minomina.empleados.size();i++){
                 System.out.println(minomina.empleados.get(i).documento);
@@ -223,6 +232,7 @@ public class ProyectoController implements Initializable {
 
         }
         catch (Exception e ){
+            mError.setText(e.toString());
 
         }
 
@@ -248,6 +258,7 @@ public class ProyectoController implements Initializable {
 
         }
         catch (profesorexep e){
+            mError.setText(e.toString());
             System.out.println("mensaje:" + e);
            /*for(int i =0 ; i < minomina.empleados.size();i++){
                 System.out.println(minomina.empleados.get(i).documento);
@@ -255,6 +266,7 @@ public class ProyectoController implements Initializable {
 
         }
         catch (Nominaexep e){
+            mError.setText(e.toString());
             System.out.println("mensaje:" + e);
             /*for(int i =0 ; i < minomina.empleados.size();i++){
                 System.out.println(minomina.empleados.get(i).documento);
@@ -262,7 +274,7 @@ public class ProyectoController implements Initializable {
 
         }
         catch (Exception e){
-
+            mError.setText(e.toString());
         }
 
 
