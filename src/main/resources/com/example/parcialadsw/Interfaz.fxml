@@ -11,13 +11,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: red; -fx-background-color: #34ebc0;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parcialadsw.ProyectoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: red; -fx-background-color: #0D0D0D;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parcialadsw.ProyectoController">
     <children>
-        <TabPane layoutX="14.0" layoutY="91.0" prefHeight="295.0" prefWidth="578.0" style="-fx-border-color: RED;" tabClosingPolicy="UNAVAILABLE">
+        <TabPane layoutX="14.0" layoutY="91.0" prefHeight="295.0" prefWidth="578.0" style="-fx-border-color: RED; -fx-background-color: #F2CB57;" tabClosingPolicy="UNAVAILABLE">
             <tabs>
-                <Tab text="Profesor">
+                <Tab style="-fx-background-color: #F2CB57;" text="Profesor">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #a2ebda; -fx-border-color: black;">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #9177F2; -fx-border-color: black;">
                             <children>
                                 <TextField fx:id="campoNombreProfesor" layoutX="33.0" layoutY="29.0" prefHeight="25.0" prefWidth="314.0" promptText="Nombre" />
                                 <TextField fx:id="campoIDProfesor" layoutX="33.0" layoutY="62.0" prefHeight="25.0" prefWidth="314.0" promptText="Documento" />
@@ -35,9 +35,9 @@
                         </AnchorPane>
                     </content>
                 </Tab>
-                <Tab text="Monitor">
+                <Tab style="-fx-background-color: #F2CB57;" text="Monitor">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #59756f; -fx-border-color: black;">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #9177F2; -fx-border-color: black;">
                      <children>
                         <TextField fx:id="campoNombreMonitor" layoutX="33.0" layoutY="28.0" prefHeight="25.0" prefWidth="314.0" promptText="Nombre" />
                         <TextField fx:id="campoIDMonitor" layoutX="33.0" layoutY="62.0" prefHeight="25.0" prefWidth="314.0" promptText="Documento" />
@@ -48,9 +48,9 @@
                      </children></AnchorPane>
                     </content>
                 </Tab>
-                <Tab text="Empleado">
+                <Tab style="-fx-background-color: #F2CB57;" text="Empleado">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #1b7a66; -fx-border-color: black;">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #9177F2; -fx-border-color: black;">
                      <children>
                         <ComboBox fx:id="lCargos" layoutX="158.0" layoutY="151.0" prefHeight="25.0" prefWidth="190.0" promptText="Cargo" />
                         <TextField fx:id="campoNombrePEmpleado" layoutX="33.0" layoutY="28.0" prefHeight="25.0" prefWidth="314.0" promptText="Nombre" />
@@ -62,9 +62,9 @@
                      </children></AnchorPane>
                     </content>
                 </Tab>
-                <Tab text="Salario">
+                <Tab style="-fx-background-color: #7519E6;" text="Salario">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #238772; -fx-border-color: black;">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #F2CB57; -fx-border-color: black;">
                      <children>
                         <TextField fx:id="salarioArchivo" layoutX="23.0" layoutY="34.0" prefHeight="25.0" prefWidth="535.0" promptText="Archivo" />
                         <TextField fx:id="salarioNombre" layoutX="23.0" layoutY="80.0" prefHeight="25.0" prefWidth="535.0" promptText="Nombre" />
@@ -73,9 +73,9 @@
                      </children></AnchorPane>
                     </content>
                 </Tab>
-            <Tab text="A. Asignaturas">
+            <Tab style="-fx-background-color: #9177F2;" text="A. Asignaturas">
               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #4287f5; -fx-border-color: BLACK;">
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #52F2F2; -fx-border-color: BLACK;">
                      <children>
                         <ComboBox fx:id="comboAsignaturas" layoutX="14.0" layoutY="44.0" prefHeight="25.0" prefWidth="553.0" promptText="Asignaturas" />
                         <TextField fx:id="documentoIDAsignaturas" layoutX="14.0" layoutY="90.0" prefHeight="25.0" prefWidth="553.0" promptText="Documento Identidad" />
@@ -86,8 +86,8 @@
             </Tab>
             </tabs>
         </TabPane>
-        <Button fx:id="bCargarArchivo" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#cargarArchivo" prefHeight="35.0" prefWidth="286.0" text="Cargar Archivo" />
-        <Button fx:id="bGuardarArchivo" layoutX="303.0" layoutY="14.0" mnemonicParsing="false" onAction="#guardarArchivo" prefHeight="35.0" prefWidth="286.0" text="Guardar Archivo" />
-      <Button fx:id="bGenerarNomina" layoutX="13.0" layoutY="56.0" mnemonicParsing="false" onAction="#generarNomina" prefHeight="29.0" prefWidth="578.0" text="Generar Nomina" />
+        <Button fx:id="bCargarArchivo" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#cargarArchivo" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #BE99F2; -fx-border-color: red; -fx-background-insets: 0; -fx-background-radius: 4; -fx-border-radius: 4;" text="Cargar Archivo" />
+        <Button fx:id="bGuardarArchivo" layoutX="303.0" layoutY="14.0" mnemonicParsing="false" onAction="#guardarArchivo" prefHeight="35.0" prefWidth="286.0" style="-fx-background-color: #BE99F2; -fx-border-color: red; -fx-background-insets: 0; -fx-background-radius: 4; -fx-border-radius: 4;" text="Guardar Archivo" />
+      <Button fx:id="bGenerarNomina" layoutX="13.0" layoutY="56.0" mnemonicParsing="false" onAction="#generarNomina" prefHeight="29.0" prefWidth="578.0" style="-fx-background-color: #BE99F2; -fx-border-color: red; -fx-background-insets: 0; -fx-background-radius: 4; -fx-border-radius: 4;" text="Generar Nomina" />
     </children>
 </AnchorPane>

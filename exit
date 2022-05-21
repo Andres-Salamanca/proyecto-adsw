@@ -1,0 +1,95 @@
+[33mcommit deacec286d2d4b97ef2bf4b9c3239a559f71d109[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Kahsma <cajomapa@gmail.com>
+Date:   Fri May 20 16:05:58 2022 -0500
+
+    Botton Generar nomina y Interfaz de asignaturas.
+
+[33mcommit 7b9edab6e796cf9aac7d0f19e3f9384333f34495[m
+Author: ALEYI17 <aleelaleyi@gmail.com>
+Date:   Thu May 19 19:37:27 2022 -0500
+
+    avances en crontrolador y nomina
+
+[33mcommit dff4b32f6adf9da54ea250636d69fff614566ba3[m
+Author: ALEYI17 <aleelaleyi@gmail.com>
+Date:   Thu May 19 18:47:21 2022 -0500
+
+    creacion clases exepcion
+
+[33mcommit 7176646b06d820e05796e4321a016198f60c8b33[m
+Author: Andres-Salamanca <andrealebarbaritos@gmail.com>
+Date:   Wed May 18 15:10:06 2022 -0500
+
+    conseguir informacion de la interfaz
+
+[33mcommit d33dd498877189b665cd7c666eb66c98f44aa768[m
+Author: Kahsma <cajomapa@gmail.com>
+Date:   Wed May 18 09:07:42 2022 -0500
+
+    Interfaz: Empleados y Salario (tabs)
+
+[33mcommit def5716efccd641596b8783e61ee23faa9976a5b[m
+Author: Kahsma <cajomapa@gmail.com>
+Date:   Tue May 17 22:43:03 2022 -0500
+
+    Colores y monitor para la interfaz
+
+[33mcommit d8a4585c81a940717feb694a676f05e6abbcce93[m
+Author: Kahsma <cajomapa@gmail.com>
+Date:   Tue May 17 20:02:47 2022 -0500
+
+    Interfaz Y controladores basicos
+
+[33mcommit 102826663865500728ea04dc974a0c626ad9b33a[m
+Author: ALEYI17 <aleelaleyi@gmail.com>
+Date:   Mon May 16 14:22:11 2022 -0500
+
+    terminamos calcular precio
+
+[33mcommit 48e6dccb4d61b8c0201def66f798b60faf134a15[m
+Author: Andres-Salamanca <andrealebarbaritos@gmail.com>
+Date:   Sun May 15 17:46:03 2022 -0500
+
+    arreglar spelling
+
+[33mcommit 8387e6d58f6659e7889184fefc68a45da0d8a852[m
+Author: ALEYI17 <aleelaleyi@gmail.com>
+Date:   Sun May 15 14:05:58 2022 -0500
+
+    añadi nuevos metodos
+
+[33mcommit cf162ccbc7cac084029f248d270da4feee2b4dee[m
+Author: ALEYI17 <aleelaleyi@gmail.com>
+Date:   Sat May 14 17:34:08 2022 -0500
+
+    actualizacion del constructor de nomina,profesor,monitor
+
+[33mcommit d97eb850a4fb92f1de5e70b73ea6dd8061125262[m
+Author: ALEYI17 <aleelaleyi@gmail.com>
+Date:   Sat May 14 17:25:56 2022 -0500
+
+    mas actualizaciones de las clases
+
+[33mcommit b3e9fab95db20173cc6bd3a2852819c0a68941e0[m
+Author: ALEYI17 <aleelaleyi@gmail.com>
+Date:   Fri May 13 14:46:53 2022 -0500
+
+    lista de empleados
+
+[33mcommit 8b4721041133126e4616de7ad01cb3bde661d8da[m
+Author: ALEYI17 <aleelaleyi@gmail.com>
+Date:   Thu May 12 18:27:57 2022 -0500
+
+    actualizacion clases
+
+[33mcommit 7b67dc2cd73ad3232d3a76c70a87cda6512afa96[m
+Author: ALEYI17 <aleelaleyi@gmail.com>
+Date:   Thu May 12 18:07:21 2022 -0500
+
+    crear dos clases
+
+[33mcommit f3ce1ea25cd6bc89de6a21b80582ecd41689da07[m
+Author: Andres-Salamanca <andrealebarbaritos@gmail.com>
+Date:   Thu May 12 17:40:44 2022 -0500
+
+    subiendo archivos
