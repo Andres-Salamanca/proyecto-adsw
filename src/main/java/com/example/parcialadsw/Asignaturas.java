@@ -1,5 +1,10 @@
 package com.example.parcialadsw;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Asignaturas {
     private String nombre;
     private int horas;
@@ -33,6 +38,7 @@ public class Asignaturas {
 
     }
 
+    @XmlAttribute
     public String getNombre() {
         return nombre;
     }
@@ -41,6 +47,7 @@ public class Asignaturas {
         this.nombre = nombre;
     }
 
+    @XmlElement
     public int getHoras() {
         return horas;
     }

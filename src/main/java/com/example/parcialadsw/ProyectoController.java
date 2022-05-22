@@ -9,13 +9,17 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ProyectoController implements Initializable {
+public class ProyectoController implements Initializable, manejadorarchivos2 {
 
     Nomina minomina = new Nomina();
+
 
     @FXML
     private Button bCargarArchivo;
@@ -83,6 +87,14 @@ public class ProyectoController implements Initializable {
     @FXML
     private Text mError;
     @FXML
+    private Text mErrorpro;
+    @FXML
+    private Text mErrorem;
+    @FXML
+    private Text mErrorsa;
+    @FXML
+    private Text mErrorasi;
+    @FXML
     private TextField salarioArchivo;
 
     @FXML
@@ -95,7 +107,23 @@ public class ProyectoController implements Initializable {
 
     @FXML
     void cargarArchivo(ActionEvent event) {
+        FileChooser chooser = new FileChooser();
+        FileChooser.ExtensionFilter extensiones = new FileChooser.ExtensionFilter("Text files" , "*.xml");
+        chooser.getExtensionFilters().add(extensiones);
+        File archnomi = chooser.showOpenDialog(null);
+        String sarchivo = archnomi.toString();
+        System.out.println(sarchivo);
+        if (archnomi != null){
+            try{
+                minomina = new Nomina(manejadorarchivos2.leerArchivoXML(sarchivo));
 
+            }
+            catch (Exception e){
+                System.out.println("error");
+
+            }
+
+        }
     }
 
     @FXML
@@ -110,18 +138,22 @@ public class ProyectoController implements Initializable {
             salarioNombre.setText(minomina.empleados.get(posicion).getNombre());
         }
         catch(Nominaexep e){
-            System.out.println("mensaje:"+e);
+            mErrorsa.setText(e.toString());
+            System.out.println("mensaje: "+ e);
         }
         catch(profesorexep e){
-            System.out.println("mensaje:"+e);
+            mErrorsa.setText(e.toString());
+            System.out.println("mensaje: "+ e);
 
         }
         catch(monitorexep e){
-            System.out.println("mensaje:"+e);
+            mErrorsa.setText(e.toString());
+            System.out.println("mensaje: "+ e);
 
         }
         catch(empleadoexep e){
-            System.out.println("mensaje:"+e);
+            mErrorsa.setText(e.toString());
+            System.out.println("mensaje: "+ e);
 
         }
 
@@ -134,19 +166,23 @@ public class ProyectoController implements Initializable {
             minomina.anadir_asig(docum,asig);
         }
         catch (Nominaexep e){
-            mError.setText(e.toString());
+            mErrorasi.setText(e.toString());
             System.out.println("mensaje: "+ e);
         }
         catch (profesorexep e){
-            mError.setText(e.toString());
+            mErrorasi.setText(e.toString());
             System.out.println("mensaje: "+ e);
         }
         catch (monitorexep e){
-            mError.setText(e.toString());
+            mErrorasi.setText(e.toString());
+            System.out.println("mensaje: "+ e);
+        }
+        catch(NumberFormatException e){
+            mErrorasi.setText("Documento invalido");
             System.out.println("mensaje: "+ e);
         }
         catch (Exception e){
-            mError.setText(e.toString());
+            mErrorasi.setText(e.toString());
             System.out.println("mensaje: "+ e);
         }
 
@@ -175,7 +211,7 @@ public class ProyectoController implements Initializable {
 
         }
         catch (empleadoexep e ){
-            mError.setText(e.toString());
+            mErrorem.setText(e.toString());
             System.out.println("mensaje:" + e);
            /*for(int i =0 ; i < minomina.empleados.size();i++){
                 System.out.println(minomina.empleados.get(i).documento);
@@ -183,15 +219,19 @@ public class ProyectoController implements Initializable {
 
         }
         catch (Nominaexep e  ){
-            mError.setText(e.toString());
+            mErrorem.setText(e.toString());
             System.out.println("mensaje:" + e);
             /*for(int i =0 ; i < minomina.empleados.size();i++){
                 System.out.println(minomina.empleados.get(i).documento);
             }*/
 
         }
+        catch(NumberFormatException e){
+            mErrorem.setText("Documento invalido");
+            System.out.println("mensaje: "+ e);
+        }
         catch (Exception e){
-            mError.setText(e.toString());
+            mErrorem.setText(e.toString());
             System.out.println("mensaje:" + e);
         }
 
@@ -231,6 +271,10 @@ public class ProyectoController implements Initializable {
             }*/
 
         }
+        catch(NumberFormatException e){
+            mError.setText("Documento invalido");
+            System.out.println("mensaje: "+ e);
+        }
         catch (Exception e ){
             mError.setText(e.toString());
 
@@ -266,15 +310,19 @@ public class ProyectoController implements Initializable {
 
         }
         catch (Nominaexep e){
-            mError.setText(e.toString());
+            mErrorpro.setText(e.toString());
             System.out.println("mensaje:" + e);
             /*for(int i =0 ; i < minomina.empleados.size();i++){
                 System.out.println(minomina.empleados.get(i).documento);
             }*/
 
         }
+        catch(NumberFormatException e){
+            mErrorpro.setText("Documento invalido o SMVM invalidos");
+            System.out.println("mensaje: "+ e);
+        }
         catch (Exception e){
-            mError.setText(e.toString());
+            mErrorpro.setText(e.toString());
         }
 
 
@@ -287,7 +335,24 @@ public class ProyectoController implements Initializable {
     @FXML
     void guardarArchivo(ActionEvent event) {
 
+        String nombrearchivo2= "Nomina.xml";
+        //String nombrearchivo= "C:\\Users\\hijitos\\Documents\\tercer semestre\\analisis y diseño de software\\proyectofinal\\proyecto-adsw\\src\\main\\resources\\com\\example\\parcialadsw\\Nomina.xml";
+        System.out.println(nombrearchivo2);
+        //manejadorarchivos2.escribir_xml(nombrearchivo,minomina.getEmpleados());
+        System.out.println("hola");
+        try {
+            System.out.println("hola2");
+            manejadorarchivos2.escribirArchivoXML(nombrearchivo2,minomina.getEmpleados());
+            System.out.println("hola3");
+        } catch (IOException e) {
+            System.out.println(e.getCause());
+            throw new RuntimeException(e);
+
+        }
+
+
     }
+
     String [] asignaturas = {"POO","ADSw","BD","CYR","CDIO","CALCULO1","CALCULO2","ARQUITECTURA_PC"};
     String [] oficina = {"SUR","NORTE","CENTRAL","ORIENTE","OCCIDENTE", "H", "JB","NSDC"};
     String [] valEscalafono ={"1","2","3","4"};

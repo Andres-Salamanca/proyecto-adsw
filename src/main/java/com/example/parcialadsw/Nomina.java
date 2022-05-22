@@ -1,14 +1,23 @@
 package com.example.parcialadsw;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
-
+@XmlRootElement(name = "Nomina")
 public class Nomina {
 
+    @XmlElement(name = "empleado")
     public ArrayList <Empleado> empleados ;
 
     public Nomina() {
         this.empleados = new ArrayList<Empleado>();
     }
+
+    public Nomina(ArrayList<Empleado> empleados) {
+        this.empleados = empleados;
+    }
+
+
 
     public ArrayList<Empleado> getEmpleados() {
         return empleados;

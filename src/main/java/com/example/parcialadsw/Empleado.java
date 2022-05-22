@@ -1,5 +1,9 @@
 package com.example.parcialadsw;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement(name = "empleado")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Empleado {
 
     protected String nombre ;
@@ -18,6 +22,7 @@ public class Empleado {
         this.salariosMinimo = salariosMinimo;
     }
 
+    @XmlElement
     public String getNombre() {
         return nombre;
     }
@@ -26,6 +31,7 @@ public class Empleado {
         this.nombre = nombre;
     }
 
+    @XmlAttribute
     public int getDocumento() {
         return documento;
     }
@@ -34,6 +40,7 @@ public class Empleado {
         this.documento = documento;
     }
 
+    @XmlElement
     public String getDependencia() {
         return dependencia;
     }
@@ -42,6 +49,7 @@ public class Empleado {
         this.dependencia = dependencia;
     }
 
+    @XmlElement
     public String getCargo() {
         return cargo;
     }
@@ -50,14 +58,17 @@ public class Empleado {
         this.cargo = cargo;
     }
 
+    @XmlElement
     public float getSalariosMinimo() {
         return salariosMinimo;
     }
+
 
     public void setSalariosMinimo(float salariosMinimo) {
         this.salariosMinimo = salariosMinimo;
     }
 
+    @XmlElement
     public static float getSalarioMinimo() {
         return salarioMinimo;
     }
