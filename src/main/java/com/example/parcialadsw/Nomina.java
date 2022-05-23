@@ -2,6 +2,9 @@ package com.example.parcialadsw;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 @XmlRootElement(name = "Nomina")
 public class Nomina {
@@ -73,7 +76,6 @@ public class Nomina {
         else if (repetido == false) {
             Monitor moni = new Monitor(nombre,documento,dependencia,cargo,salariosMinimo,horas_trabajas);
             empleados.add(moni);
-
         }
 
 

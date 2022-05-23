@@ -12,7 +12,9 @@ import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -297,7 +299,7 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
             escalafono =  Integer.parseInt(bEscalafonoProfesor.getValue());
             salariosMinimo = Float.parseFloat(campoCantSalMinProfesor.getText());
 
-            System.out.println(nombre +""+documento+""+dependencia+""+escalafono+""+salariosMinimo);
+            System.out.println(nombre +" "+documento+" "+dependencia+" "+escalafono+" "+salariosMinimo);
             minomina.crear_profesor(nombre,documento,dependencia,cargo,salariosMinimo,0,escalafono);
 
         }
@@ -330,7 +332,20 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
     @FXML
     void generarNomina(ActionEvent event) {
 
+        File Reporte;
+        try {
+            Reporte = new File("Reporte.txt");
+            System.out.println("ayuda");
+            if (Reporte.createNewFile()) {
+                System.out.println("se ha creado el archivo reporte");
+            }
+    } catch (Throwable e) {
+        System.err.println("no se creo el archivo REPORTE" + e);
     }
+        System.out.println("si no salio error, el archivo esta creado");
+
+
+}
 
     @FXML
     void guardarArchivo(ActionEvent event) {
@@ -349,6 +364,10 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
             throw new RuntimeException(e);
 
         }
+
+
+
+
 
 
     }
