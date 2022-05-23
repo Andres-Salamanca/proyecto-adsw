@@ -3,10 +3,11 @@ package com.example.parcialadsw;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-@XmlRootElement
-public class Profesor extends Empleado{
+
+public class Profesor extends Empleado implements Serializable {
     protected int horas_trabajadas;
     protected int escalofon;
     ArrayList<Asignaturas> asignaturass ;
@@ -32,7 +33,7 @@ public class Profesor extends Empleado{
 
     }
 
-    @XmlElement
+
     public int getHoras_trabajadas() {
         return horas_trabajadas;
     }
@@ -41,7 +42,7 @@ public class Profesor extends Empleado{
         this.horas_trabajadas = horas_trabajadas;
     }
 
-    @XmlElement
+
     public int getEscalofon() {
         return escalofon;
     }
@@ -50,7 +51,7 @@ public class Profesor extends Empleado{
         this.escalofon = escalofon;
     }
 
-    @XmlElement
+
     public ArrayList<Asignaturas> getAsignaturas() {
         return asignaturass;
     }

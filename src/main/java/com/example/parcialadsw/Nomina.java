@@ -2,11 +2,12 @@ package com.example.parcialadsw;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.ArrayList;
-@XmlRootElement(name = "Nomina")
-public class Nomina {
 
-    @XmlElement(name = "empleado")
+public class Nomina implements Serializable {
+
+
     public ArrayList <Empleado> empleados ;
 
     public Nomina() {

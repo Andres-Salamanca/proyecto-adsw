@@ -3,10 +3,11 @@ package com.example.parcialadsw;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-@XmlRootElement
-public class Monitor extends Empleado{
+
+public class Monitor extends Empleado implements Serializable {
     protected int horas_trabajas;
     ArrayList<Asignaturas> asignaturass ;
 
@@ -16,7 +17,7 @@ public class Monitor extends Empleado{
         this.asignaturass= new ArrayList<Asignaturas>();
     }
 
-    @XmlElement
+
     public int getHoras_trabajas() {
         return horas_trabajas;
     }
@@ -25,7 +26,7 @@ public class Monitor extends Empleado{
         this.horas_trabajas = horas_trabajas;
     }
 
-    @XmlElement
+
     public ArrayList<Asignaturas> getAsignaturas() {
         return asignaturass;
     }

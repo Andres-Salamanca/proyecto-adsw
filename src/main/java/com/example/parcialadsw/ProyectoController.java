@@ -108,14 +108,15 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
     @FXML
     void cargarArchivo(ActionEvent event) {
         FileChooser chooser = new FileChooser();
-        FileChooser.ExtensionFilter extensiones = new FileChooser.ExtensionFilter("Text files" , "*.xml");
+        FileChooser.ExtensionFilter extensiones = new FileChooser.ExtensionFilter("Text files" , "*.xml","*.txt");
         chooser.getExtensionFilters().add(extensiones);
         File archnomi = chooser.showOpenDialog(null);
         String sarchivo = archnomi.toString();
         System.out.println(sarchivo);
         if (archnomi != null){
             try{
-                minomina = new Nomina(manejadorarchivos2.leerArchivoXML(sarchivo));
+                //minomina = new Nomina(manejadorarchivos2.leerArchivoXML(sarchivo));
+                minomina = manejadorarchivos2.deserializar(sarchivo);
 
             }
             catch (Exception e){
@@ -335,20 +336,24 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
     @FXML
     void guardarArchivo(ActionEvent event) {
 
-        String nombrearchivo2= "Nomina.xml";
+
+        String nombrearchivo2= "Nomina.txt";
         //String nombrearchivo= "C:\\Users\\hijitos\\Documents\\tercer semestre\\analisis y diseño de software\\proyectofinal\\proyecto-adsw\\src\\main\\resources\\com\\example\\parcialadsw\\Nomina.xml";
         System.out.println(nombrearchivo2);
         //manejadorarchivos2.escribir_xml(nombrearchivo,minomina.getEmpleados());
+        manejadorarchivos2.serializararchivo(nombrearchivo2 , minomina);
         System.out.println("hola");
-        try {
+        /*try {
             System.out.println("hola2");
-            manejadorarchivos2.escribirArchivoXML(nombrearchivo2,minomina.getEmpleados());
+            //manejadorarchivos2.escribirArchivoXML(nombrearchivo2,minomina.getEmpleados());
             System.out.println("hola3");
         } catch (IOException e) {
             System.out.println(e.getCause());
             throw new RuntimeException(e);
 
-        }
+        }*/
+
+
 
 
     }

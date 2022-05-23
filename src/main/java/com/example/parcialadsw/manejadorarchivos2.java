@@ -12,7 +12,7 @@ import javax.xml.bind.Marshaller;
 public interface manejadorarchivos2 {
 
 
-    public static void escribirArchivoXML(String nombreArchivo, ArrayList<Empleado> emples) throws IOException {
+    /*public static void escribirArchivoXML(String nombreArchivo, ArrayList<Empleado> emples) throws IOException {
 
         System.out.println("hola4");
         Nomina nom = new Nomina(emples);
@@ -59,6 +59,32 @@ public interface manejadorarchivos2 {
             e.printStackTrace();
         }
         return emples;
+    }*/
+
+    public static  void serializararchivo(String nom_archivo , Nomina nomi){
+
+        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(nom_archivo))) {
+            out.writeObject(nomi);
+
+        }
+        catch (Exception e){
+
+            System.err.println(e.getMessage());
+        }
     }
+    public static Nomina deserializar(String nom_archivo){
+        Nomina nomi = null;
+        try(ObjectInputStream inp = new ObjectInputStream(new FileInputStream(nom_archivo))) {
+            nomi = (Nomina) inp.readObject();
+        }
+        catch (IOException e){
+            System.out.println("archivo no existe " + e);
+        }
+        catch (Exception e){
+            System.out.println("ocurrio un error" + e);
+        }
+        return nomi;
+    }
+
 
 }
