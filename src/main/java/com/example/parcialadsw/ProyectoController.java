@@ -134,10 +134,13 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
 
         try{
 
-            int documen = Integer.parseInt(salarioDocumento.getText());
-            double salario = minomina.calcularsalario(documen);
+            int documen ;
+            documen = Integer.parseInt(salarioDocumento.getText());
+            double salario;
+            salario = minomina.calcularsalario(documen);
             salarioArchivo.setText(String.valueOf(salario));
-            int posicion = minomina.buscar_persona_calcularsalario(documen);
+            int posicion;
+            posicion = minomina.buscar_persona_calcularsalario(documen);
             salarioNombre.setText(minomina.empleados.get(posicion).getNombre());
         }
         catch(Nominaexep e){
@@ -158,6 +161,12 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
             mErrorsa.setText(e.toString());
             System.out.println("mensaje: "+ e);
 
+        }
+        catch (NumberFormatException e){
+            mErrorsa.setText("Documento erroneo");
+        }
+        catch (Exception e){
+            mErrorsa.setText(e.toString());
         }
 
     }
@@ -180,6 +189,10 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
             mErrorasi.setText(e.toString());
             System.out.println("mensaje: "+ e);
         }
+        catch (Asignaturaexep e){
+            mErrorasi.setText(e.toString());
+            System.out.println("mensaje: "+ e);
+        }
         catch(NumberFormatException e){
             mErrorasi.setText("Documento invalido");
             System.out.println("mensaje: "+ e);
@@ -198,10 +211,10 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
         System.out.println("entro");
         try {
             System.out.println("entro2");
-            String nombre ="";
-            int documento =0;
+            String nombre ;
+            int documento;
             String dependencia;
-            String cargo ="";
+            String cargo ;
             float salariosMinimo;
 
             nombre = campoNombrePEmpleado.getText();
@@ -245,8 +258,8 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
     @FXML
     void crearMonitor(ActionEvent event) {
         try {
-            String nombre ="";
-            int documento =0;
+            String nombre ;
+            int documento ;
             String dependencia;
 
             float salariosMinimo;
@@ -288,8 +301,8 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
     @FXML
     void crearProfesor(ActionEvent event) {
         try {
-            String nombre ="";
-            int documento =0;
+            String nombre ;
+            int documento ;
             String dependencia;
             int escalafono;
             float salariosMinimo;
