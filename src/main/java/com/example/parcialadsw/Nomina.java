@@ -2,7 +2,13 @@ package com.example.parcialadsw;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+<<<<<<< HEAD
 import java.io.Serializable;
+=======
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+>>>>>>> 6358f2bd29bd5d4dfc9a8356b3d03be0a18a151a
 import java.util.ArrayList;
 
 public class Nomina implements Serializable {
@@ -74,7 +80,6 @@ public class Nomina implements Serializable {
         else if (repetido == false) {
             Monitor moni = new Monitor(nombre,documento,dependencia,cargo,salariosMinimo,horas_trabajas);
             empleados.add(moni);
-
         }
 
 
