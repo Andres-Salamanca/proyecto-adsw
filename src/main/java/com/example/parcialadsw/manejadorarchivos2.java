@@ -30,8 +30,6 @@ public interface manejadorarchivos2 {
             System.err.println("Error al escribir el archivo XML: "+e.getMessage());
             e.printStackTrace();
         }
-
-
     }
     public static void escribir_xml(String nombreArchivo, ArrayList<Empleado> emples){
 
@@ -65,6 +63,7 @@ public interface manejadorarchivos2 {
 
         try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(nom_archivo))) {
             out.writeObject(nomi);
+            System.out.println(nomi);
 
         }
         catch (Exception e){

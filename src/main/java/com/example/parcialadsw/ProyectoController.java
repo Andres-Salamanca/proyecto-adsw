@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
+import java.util.ArrayList;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -21,7 +22,10 @@ import java.util.ResourceBundle;
 public class ProyectoController implements Initializable, manejadorarchivos2 {
 
     Nomina minomina = new Nomina();
-
+    ArrayList nombreA = new ArrayList();
+    ArrayList documentoA = new ArrayList();
+    ArrayList SalarioMinA = new ArrayList();
+    int contador = 0;
 
     @FXML
     private Button bCargarArchivo;
@@ -225,6 +229,14 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
             System.out.println(nombre +""+documento+""+dependencia+""+cargo+""+salariosMinimo);
             minomina.crear_empleado(nombre,documento,dependencia,cargo,salariosMinimo);
 
+            nombreA.add(nombre);
+            documentoA.add(documento);
+            SalarioMinA.add(salariosMinimo);
+            contador++;
+
+
+
+
         }
         catch (empleadoexep e ){
             mErrorem.setText(e.toString());
@@ -271,6 +283,11 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
             System.out.println(nombre +""+documento+""+dependencia+""+salariosMinimo);
             minomina.crear_monitor(nombre,documento,dependencia,cargo,salariosMinimo,0);
 
+            nombreA.add(nombre);
+            documentoA.add(documento);
+            SalarioMinA.add(salariosMinimo);
+            contador++;
+
         }
         catch (monitorexep e ){
             mError.setText(e.toString());
@@ -316,6 +333,12 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
             System.out.println(nombre +" "+documento+" "+dependencia+" "+escalafono+" "+salariosMinimo);
             minomina.crear_profesor(nombre,documento,dependencia,cargo,salariosMinimo,0,escalafono);
 
+
+            nombreA.add(nombre);
+            documentoA.add(documento);
+            SalarioMinA.add(salariosMinimo);
+            contador++;
+
         }
         catch (profesorexep e){
             mError.setText(e.toString());
@@ -347,16 +370,32 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
     void generarNomina(ActionEvent event) {
 
         File Reporte;
+
+        FileWriter escribir;
+
+        String nom_arch = "Reporte.txt";
         try {
-            Reporte = new File("Reporte.txt");
+            Reporte = new File(nom_arch);
             System.out.println("ayuda");
             if (Reporte.createNewFile()) {
                 System.out.println("se ha creado el archivo reporte");
             }
+
+            escribir = new FileWriter(nom_arch);
+            for (int i = 0; i < nombreA.size(); i++) {
+
+                System.out.println(nombreA.get(i) + ", " + documentoA.get(i) + ", $ " + SalarioMinA.get(i));
+                escribir.write(nombreA.get(i) + ", " + documentoA.get(i) + ", $ " + SalarioMinA.get(i)+"\n");
+            }
+            escribir.close();
+
+
     } catch (Throwable e) {
-        System.err.println("no se creo el archivo REPORTE" + e);
+        System.err.println("no se creo el archivo REPORTE " + e);
     }
         System.out.println("si no salio error, el archivo esta creado");
+
+        //manejadorarchivos2.Reporte(nom_arch,nombreA, documentoA, SalarioMinA);
 
 
 }
@@ -380,14 +419,6 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
             throw new RuntimeException(e);
 
         }*/
-
-
-
-
-
-
-
-
     }
 
     String [] asignaturas = {"POO","ADSw","BD","CYR","CDIO","CALCULO1","CALCULO2","ARQUITECTURA_PC"};
