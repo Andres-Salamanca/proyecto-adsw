@@ -98,6 +98,8 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
     @FXML
     private Text mErrorasi;
     @FXML
+    private  Text mErrorarch;
+    @FXML
     private TextField salarioArchivo;
 
     @FXML
@@ -111,7 +113,7 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
     @FXML
     void cargarArchivo(ActionEvent event) {
         FileChooser chooser = new FileChooser();
-        FileChooser.ExtensionFilter extensiones = new FileChooser.ExtensionFilter("Text files" , "*.xml","*.txt");
+        FileChooser.ExtensionFilter extensiones = new FileChooser.ExtensionFilter("Text files" , "*.txt");
         chooser.getExtensionFilters().add(extensiones);
         File archnomi = chooser.showOpenDialog(null);
         String sarchivo = archnomi.toString();
@@ -123,6 +125,7 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
 
             }
             catch (Exception e){
+                mErrorarch.setText("no se pudo cargar el archivo");
                 System.out.println("error");
 
             }
@@ -365,12 +368,19 @@ public class ProyectoController implements Initializable, manejadorarchivos2 {
     void guardarArchivo(ActionEvent event) {
 
 
-        String nombrearchivo2= "Nomina.txt";
-        //String nombrearchivo= "C:\\Users\\hijitos\\Documents\\tercer semestre\\analisis y diseño de software\\proyectofinal\\proyecto-adsw\\src\\main\\resources\\com\\example\\parcialadsw\\Nomina.xml";
-        System.out.println(nombrearchivo2);
-        //manejadorarchivos2.escribir_xml(nombrearchivo,minomina.getEmpleados());
-        manejadorarchivos2.serializararchivo(nombrearchivo2 , minomina);
-        System.out.println("hola");
+        try{
+            String nombrearchivo2= "Nomina.txt";
+
+            System.out.println(nombrearchivo2);
+            //manejadorarchivos2.escribir_xml(nombrearchivo,minomina.getEmpleados());
+            manejadorarchivos2.serializararchivo(nombrearchivo2 , minomina);
+            System.out.println("hola");
+        }
+        catch (Exception e){
+            mErrorarch.setText("error al cargar archivo");
+        }
+
+
         /*try {
             System.out.println("hola2");
             //manejadorarchivos2.escribirArchivoXML(nombrearchivo2,minomina.getEmpleados());

@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: red; -fx-background-color: #0D0D0D;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parcialadsw.ProyectoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="600.0" style="-fx-border-color: red; -fx-background-color: #0D0D0D;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parcialadsw.ProyectoController">
     <children>
         <TabPane layoutX="14.0" layoutY="91.0" prefHeight="295.0" prefWidth="578.0" style="-fx-border-color: RED; -fx-background-color: #F2CB57;" tabClosingPolicy="UNAVAILABLE">
             <tabs>
@@ -98,5 +98,6 @@
         <Button fx:id="bCargarArchivo" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#cargarArchivo" prefHeight="35.0" prefWidth="286.0" style="-fx-border-color: red; -fx-background-insets: 0; -fx-background-radius: 4; -fx-border-radius: 4;" text="Cargar Archivo" />
         <Button fx:id="bGuardarArchivo" layoutX="303.0" layoutY="14.0" mnemonicParsing="false" onAction="#guardarArchivo" prefHeight="35.0" prefWidth="286.0" style="-fx-border-color: red; -fx-background-insets: 0; -fx-background-radius: 4; -fx-border-radius: 4;" text="Guardar Archivo" />
       <Button fx:id="bGenerarNomina" layoutX="13.0" layoutY="56.0" mnemonicParsing="false" onAction="#generarNomina" prefHeight="29.0" prefWidth="578.0" style="-fx-border-color: red; -fx-background-insets: 0; -fx-background-radius: 4; -fx-border-radius: 4;" text="Generar Nomina" />
+      <Text fx:id="mErrorarch" fill="#f80000" layoutX="13.0" layoutY="13.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="230.13671875" />
     </children>
 </AnchorPane>
