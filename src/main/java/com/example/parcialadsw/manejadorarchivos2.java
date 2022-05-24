@@ -4,12 +4,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Formatter;
 import javax.xml.bind.JAXB;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
 public interface manejadorarchivos2 {
+
 
 
     /*public static void escribirArchivoXML(String nombreArchivo, ArrayList<Empleado> emples) throws IOException {
@@ -59,31 +61,57 @@ public interface manejadorarchivos2 {
         return emples;
     }*/
 
-    public static  void serializararchivo(String nom_archivo , Nomina nomi){
+    public static void serializararchivo(String nom_archivo, Nomina nomi) {
 
-        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(nom_archivo))) {
+        try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(nom_archivo))) {
             out.writeObject(nomi);
             System.out.println(nomi);
 
-        }
-        catch (Exception e){
+        } catch (Exception e) {
 
             System.err.println(e.getMessage());
         }
     }
-    public static Nomina deserializar(String nom_archivo){
+
+    public static Nomina deserializar(String nom_archivo) {
         Nomina nomi = null;
-        try(ObjectInputStream inp = new ObjectInputStream(new FileInputStream(nom_archivo))) {
+        try (ObjectInputStream inp = new ObjectInputStream(new FileInputStream(nom_archivo))) {
             nomi = (Nomina) inp.readObject();
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             System.out.println("archivo no existe " + e);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("ocurrio un error" + e);
         }
         return nomi;
     }
 
+    public static void escribir_reporte(ArrayList<Empleado> emples) {
 
+        try {
+            Formatter output;
+            output = new Formatter("Reporte2.txt"); // open the file
+            for(int i = 0 ; i<emples.size();i++){
+                String nom = emples.get(i).getNombre();
+                int doc = emples.get(i).getDocumento();
+                double sal = emples.get(i).calcularSalario();
+
+                output.format("%s %s %d %s %s %f %n",nom ,
+                        ",", doc, "," , "\\" , sal );
+            }
+            if(output != null){
+                output.close();
+
+            }
+        } catch (SecurityException securityException) {
+            System.err.println("Write permission denied. Terminating.");
+            System.exit(1); // terminate the program
+        } catch (FileNotFoundException fileNotFoundException) {
+            System.err.println("Error opening file. Terminating.");
+            System.exit(1); // terminate the program
+        }
+
+
+
+
+    }
 }
